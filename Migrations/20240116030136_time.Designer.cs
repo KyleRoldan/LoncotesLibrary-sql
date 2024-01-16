@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LoncotesLibrary.Migrations
 {
     [DbContext(typeof(LoncotesLibraryDbContext))]
-    partial class LoncotesLibraryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240116030136_time")]
+    partial class time
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -238,14 +240,6 @@ namespace LoncotesLibrary.Migrations
                             GenreId = 5,
                             MaterialName = "Made up Material Name 11",
                             MaterialTypeId = 5
-                        },
-                        new
-                        {
-                            Id = 12,
-                            GenreId = 5,
-                            MaterialName = "Made up Material Name 12",
-                            MaterialTypeId = 5,
-                            OutOfCirculationSince = new DateTime(2024, 1, 15, 23, 56, 55, 59, DateTimeKind.Local).AddTicks(150)
                         });
                 });
 

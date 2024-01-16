@@ -18,6 +18,7 @@ namespace LoncotesLibrary.Models.DTOs
         public DateTime? CheckoutDate { get; set; }
 
         public DateTime? ReturnDate { get; set; }
+        public bool Paid { get; set; }
     }
 
     public class CheckoutWithLateFeeDTO

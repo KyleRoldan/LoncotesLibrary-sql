@@ -20,10 +20,10 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         
         modelBuilder.Entity<Checkout>().HasData(new Checkout[]
         {
-            new Checkout {Id = 1, MaterialId = 1, PatronId = 1,CheckoutDate = DateTime.Today, ReturnDate = null },
-            new Checkout {Id = 2, MaterialId = 2, PatronId = 2,CheckoutDate = DateTime.Today, ReturnDate = null },
-            new Checkout {Id = 3, MaterialId = 3, PatronId = 3,CheckoutDate = DateTime.Today, ReturnDate = null },
-            new Checkout {Id = 4, MaterialId = 4, PatronId = 4,CheckoutDate = DateTime.Today, ReturnDate = null }
+            new Checkout {Id = 1, MaterialId = 1, PatronId = 1,CheckoutDate = DateTime.Today, ReturnDate = null, Paid = true },
+            new Checkout {Id = 2, MaterialId = 2, PatronId = 2,CheckoutDate = DateTime.Today, ReturnDate = null, Paid = true },
+            new Checkout {Id = 3, MaterialId = 3, PatronId = 3,CheckoutDate = DateTime.Today, ReturnDate = null, Paid = true },
+            new Checkout {Id = 4, MaterialId = 4, PatronId = 4,CheckoutDate = DateTime.Today, ReturnDate = null, Paid = false }
         });
 
         // seed data with genres
@@ -38,17 +38,19 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         // Might need to seed more data 
         modelBuilder.Entity<Material>().HasData(new Material[]
         {
-            new Material {Id = 1, MaterialName = "Made up Material Name 1", MaterialTypeId = 1, GenreId = 1, OutOfCirculationSince = DateTime.Now.AddDays(-10)},
-            new Material {Id = 2, MaterialName = "Made up Material Name 2", MaterialTypeId = 2, GenreId = 2, OutOfCirculationSince = DateTime.Now.AddDays(-5)},
-            new Material {Id = 3, MaterialName = "Made up Material Name 3", MaterialTypeId = 3, GenreId = 3, OutOfCirculationSince = DateTime.Now.AddDays(-3)},
-            new Material {Id = 4, MaterialName = "Made up Material Name 4", MaterialTypeId = 4, GenreId = 4, OutOfCirculationSince = DateTime.Now.AddDays(-8)},
-            new Material {Id = 5, MaterialName = "Made up Material Name 5", MaterialTypeId = 1, GenreId = 2, OutOfCirculationSince = DateTime.Now.AddDays(-12)},
-            new Material {Id = 6, MaterialName = "Made up Material Name 6", MaterialTypeId = 2, GenreId = 3, OutOfCirculationSince = DateTime.Now.AddDays(-6)},
-            new Material {Id = 7, MaterialName = "Made up Material Name 7", MaterialTypeId = 3, GenreId = 4, OutOfCirculationSince = DateTime.Now.AddDays(-9)},
-            new Material {Id = 8, MaterialName = "Made up Material Name 8", MaterialTypeId = 4, GenreId = 5, OutOfCirculationSince = DateTime.Now.AddDays(-4)},
-            new Material {Id = 9, MaterialName = "Made up Material Name 9", MaterialTypeId = 1, GenreId = 3, OutOfCirculationSince = DateTime.Now.AddDays(-7)},
-            new Material {Id = 10, MaterialName = "Made up Material Name 10", MaterialTypeId = 2, GenreId = 4, OutOfCirculationSince = DateTime.Now.AddDays(-11)},
-            new Material {Id = 11, MaterialName = "Made up Material Name 11", MaterialTypeId = 5, GenreId = 5, OutOfCirculationSince = DateTime.Now.AddDays(-2)}
+            new Material {Id = 1, MaterialName = "Made up Material Name 1", MaterialTypeId = 1, GenreId = 1, OutOfCirculationSince = null},
+            new Material {Id = 2, MaterialName = "Made up Material Name 2", MaterialTypeId = 2, GenreId = 2, OutOfCirculationSince = null},
+            new Material {Id = 3, MaterialName = "Made up Material Name 3", MaterialTypeId = 3, GenreId = 3, OutOfCirculationSince = null},
+            new Material {Id = 4, MaterialName = "Made up Material Name 4", MaterialTypeId = 4, GenreId = 4, OutOfCirculationSince = null},
+            new Material {Id = 5, MaterialName = "Made up Material Name 5", MaterialTypeId = 1, GenreId = 2, OutOfCirculationSince = null},
+            new Material {Id = 6, MaterialName = "Made up Material Name 6", MaterialTypeId = 2, GenreId = 3, OutOfCirculationSince = null},
+            new Material {Id = 7, MaterialName = "Made up Material Name 7", MaterialTypeId = 3, GenreId = 4, OutOfCirculationSince = null},
+            new Material {Id = 8, MaterialName = "Made up Material Name 8", MaterialTypeId = 4, GenreId = 5, OutOfCirculationSince = null},
+            new Material {Id = 9, MaterialName = "Made up Material Name 9", MaterialTypeId = 1, GenreId = 3, OutOfCirculationSince = null},
+            new Material {Id = 10, MaterialName = "Made up Material Name 10", MaterialTypeId = 2, GenreId = 4, OutOfCirculationSince = null},
+            new Material {Id = 11, MaterialName = "Made up Material Name 11", MaterialTypeId = 5, GenreId = 5, OutOfCirculationSince = null},
+            new Material {Id = 12, MaterialName = "Made up Material Name 12", MaterialTypeId = 5, GenreId = 5, OutOfCirculationSince = DateTime.Now}
+
         });
 
        modelBuilder.Entity<MaterialType>().HasData(new MaterialType[]
